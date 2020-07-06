@@ -30,7 +30,8 @@ window.generateHostingTransaction = function() {
 
 window.sendTransaction = function() {
     const txJSON = document.querySelector("#tx_json").innerText
-    sendTransaction(JSON.parse(txJSON), "http://localhost:4000")
+    const endpoint = document.querySelector("#endpoint").value
+    sendTransaction(JSON.parse(txJSON), endpoint)
         .then(data => {
             if (data.errors) {
                 alert("Something went wrong: " + JSON.stringify(data.errors))
