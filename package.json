@@ -1,5 +1,5 @@
 {
-  "name": "onchain-website",
+  "name": "onchain-website-deployment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,20 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UNIRIS/onchain-website.git"
+    "url": "git+https://github.com/UNIRIS/onchain-website-deployment.git"
   },
   "keywords": [],
   "author": "",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/UNIRIS/onchain-website/issues"
+    "url": "https://github.com/UNIRIS/onchain-website-deployment/issues"
   },
-  "homepage": "https://github.com/UNIRIS/onchain-website#readme",
-  "dependencies": {
-    "uniris": "file:../../js/uniris-jslib"
-  },
+  "homepage": "https://github.com/UNIRIS/onchain-website-deployment#readme",
   "devDependencies": {
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "uniris": "^1.0.2"
   }
 }
