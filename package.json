@@ -22,6 +22,6 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "uniris": "^1.0.2"
+    "uniris": "^1.0.4"
   }
 }
