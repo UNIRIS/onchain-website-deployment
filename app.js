@@ -1,5 +1,6 @@
-import { derivateKeyPair, newTransactionBuilder, sendTransaction } from 'uniris';
+import { derivateKeyPair, newTransactionBuilder, sendTransaction, derivateAddress, getTransactionIndex } from 'uniris';
 let content = ""
+let tx
 
 const fileSelector = document.querySelector('#file');
   fileSelector.addEventListener('change', (event) => {
@@ -9,7 +10,7 @@ const fileSelector = document.querySelector('#file');
     fr.onload = function (e) {
         content = e.target.result
     }
-    fr.readAsText(fileList[0])
+    fr.readAsArrayBuffer(fileList[0])
   });
 
 window.generateHostingTransaction = function() {
@@ -20,19 +21,20 @@ window.generateHostingTransaction = function() {
     const seed = document.querySelector("#seed").value
     const index = parseInt(document.querySelector("#index").value)
 
-    const tx = newTransactionBuilder("hosting")
+    tx = newTransactionBuilder("hosting")
     .setContent(content)
     .build(seed, index, originPrivateKey)
 
-    document.querySelector("#tx_json").innerText = JSON.stringify(tx, undefined, 2)
+    document.querySelector("#tx_json").innerText = tx.address.toString('hex')
     document.querySelector("#output").style.display = "block"
 }
 
 window.sendTransaction = function() {
-    const txJSON = document.querySelector("#tx_json").innerText
     const endpoint = document.querySelector("#endpoint").value
-    sendTransaction(JSON.parse(txJSON), endpoint)
+    document.querySelector("#process").style.display = "block"
+    sendTransaction(tx, endpoint)
         .then(data => {
+            document.querySelector("#process").style.display = "none"
             if (data.errors) {
                 alert("Something went wrong: " + JSON.stringify(data.errors))
                 return
@@ -40,4 +42,16 @@ window.sendTransaction = function() {
 
             alert("Transaction submited to the network")
         })
+        .catch(() => {
+            document.querySelector("#process").style.display = "block"
+        })
+}
+
+window.getTransactionIndex = function() {
+    const endpoint = document.querySelector("#endpoint").value
+    const seed = document.querySelector("#seed").value
+    const address = derivateAddress(seed, 0)
+    getTransactionIndex(address, endpoint).then((nb) => {
+        document.querySelector("#index").value = nb
+    })
 }
