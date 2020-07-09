@@ -19,3 +19,18 @@ The HTML interface provide a form to select the file to host, create the transac
 - Generate: will generate the transaction and display the transaction address
 
 - Deploy: will send the transaction to the node endpoint specified
+
+## Installation
+
+
+```bash
+npm install
+```
+
+## Run
+
+```bash
+npm run
+```
+
+It will be open a browser page with the deployment form
