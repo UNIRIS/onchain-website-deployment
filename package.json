@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/UNIRIS/onchain-website-deployment#readme",
   "devDependencies": {
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "http-server": "^0.12.3",
-    "uniris": "^1.0.5"
+    "uniris": "^1.1.0"
   }
 }

@@ -22,8 +22,9 @@ window.generateHostingTransaction = function() {
     const index = parseInt(document.querySelector("#index").value)
 
     tx = newTransactionBuilder("hosting")
-    .setContent(content)
-    .build(seed, index, originPrivateKey)
+        .setContent(content)
+        .build(seed, index)
+        .originSign(originPrivateKey)
 
     document.querySelector("#tx_json").innerText = tx.address.toString('hex')
     document.querySelector("#output").style.display = "block"
