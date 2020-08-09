@@ -29,7 +29,7 @@ npm install
 ## Run
 
 ```bash
-npm run
+npm start
 ```
 
 It will be open a browser page with the deployment form
