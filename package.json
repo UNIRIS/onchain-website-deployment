@@ -1,6 +1,6 @@
 {
   "name": "onchain-website-deployment",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "http-server": "^0.12.3",
-    "uniris": "^1.1.0"
+    "uniris": "^1.1.1"
   }
 }
