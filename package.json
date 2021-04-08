@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -o dist",
-    "build": "webpack"
+    "build": "webpack",
+    "build_index": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,8 @@
   },
   "dependencies": {
     "http-server": "^0.12.3",
-    "uniris": "^1.2.2"
+    "mustache": "^4.2.0",
+    "uniris": "^1.2.2",
+    "yargs": "^13.3.2"
   }
 }

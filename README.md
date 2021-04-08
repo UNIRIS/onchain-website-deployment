@@ -4,6 +4,13 @@ Tool to make the deployment of the transaction chains related to the onchain ver
 
 The HTML interface provide a form to select the file to host, create the transaction and deploy it to the network.
 
+## Site building
+
+To build the website index page with the right addresses and endpoint to reach, run the script
+```
+npm run build_index
+```
+
 ## Form description
 
 - Node endpoint: Alpha Network: https://blockchain.uniris.io
